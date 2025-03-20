@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://ctpwfv3m8d4bf"]
+[gd_scene load_steps=17 format=3 uid="uid://ctpwfv3m8d4bf"]
 
 [ext_resource type="Texture2D" uid="uid://ln25i2jy28g4" path="res://assets/Seasonal Tilesets/1 - Grassland/Terrain (16 x 16).png" id="1_wu64i"]
 [ext_resource type="Texture2D" uid="uid://dpics1dfgr6de" path="res://assets/Seasonal Tilesets/1 - Grassland/Grassland_entities (16 x 16).png" id="2_naeyk"]
@@ -9,6 +9,7 @@
 [ext_resource type="Shader" uid="uid://bt1n7tn0tiesn" path="res://shaders/movement_clouds.gdshader" id="6_yso3o"]
 [ext_resource type="Texture2D" uid="uid://ddpnnh4bplyt7" path="res://assets/Seasonal Tilesets/1 - Grassland/Background parts/2 - Hills.png" id="7_0heyt"]
 [ext_resource type="Texture2D" uid="uid://chlsciaht3lsp" path="res://assets/Seasonal Tilesets/1 - Grassland/Background parts/1 - Foreground_scenery.png" id="8_dp75u"]
+[ext_resource type="PackedScene" uid="uid://cpln3x7awdcqq" path="res://prefabs/moving_platform.tscn" id="10_tii1u"]
 
 [sub_resource type="TileMapPattern" id="TileMapPattern_naeyk"]
 tile_data = PackedInt32Array(0, 65537, 1)
@@ -141,14 +142,20 @@ layer_0/tile_data = PackedInt32Array(1245184, 262144, 3, 1245185, 262144, 8, 124
 layer_1/name = "trees"
 layer_1/tile_data = PackedInt32Array(458787, 196609, 5, 589847, 196609, 5, 1048577, 65537, 1, 1048581, 327681, 1, 1048578, 327681, 1, 1048579, 327681, 1, 1048580, 589825, 1, 393245, 983041, 2, 1179665, 262144, 3, 1179663, 196608, 3, 1179664, 262144, 3, 1179666, 262144, 3, 1179667, 327680, 3, 1114119, 65537, 5, 1114120, 65537, 5, 1114126, 65537, 5, 1114132, 65537, 5, 655387, 65537, 5, 917541, 65537, 5, 852006, 65537, 5, 393252, 65537, 5, 262181, 327681, 1, 1048582, 65537, 1, 786448, 983041, 2, 851984, 983041, 2, 917520, 983041, 2, 983056, 983041, 2, 1048592, 983041, 2, 1114128, 983041, 2, 851985, 917505, 4, 917521, 917505, 4, 983057, 917505, 4, 1048593, 917505, 4, 1114129, 917505, 4, 786450, 983041, 2, 851986, 983041, 2, 917522, 983041, 2, 983058, 983041, 2, 1048594, 983041, 2, 1114130, 983041, 2, 1114138, 65537, 1, 655376, 983041, 2, 720912, 983041, 2, 720913, 917505, 4, 786449, 917505, 4, 655378, 983041, 2, 720914, 983041, 2, 524304, 983041, 2, 589840, 983041, 2, 589841, 917505, 4, 655377, 917505, 4, 524306, 983041, 2, 589842, 983041, 2, 327696, 983041, 2, 393232, 983041, 2, 458768, 983041, 2, 393233, 917505, 4, 458769, 917505, 4, 524305, 917505, 4, 327698, 983041, 2, 393234, 983041, 2, 458770, 983041, 2, 1114139, 65537, 1, 1114137, 65537, 1, 786492, 589825, 1, 1048623, 327681, 1, 1048624, 327681, 1, 1048625, 65537, 1, 1179691, 917505, 4, 852035, 327681, 5, 589897, 327681, 5, 786489, 196609, 5, 720939, 196609, 5, 196663, 983041, 2, 196661, 65537, 5, 327746, 65537, 5, 589899, 65537, 5, 589900, 65537, 5, 262192, 65537, 5)
 
+[node name="moving_platform" parent="." instance=ExtResource("10_tii1u")]
+position = Vector2(144, 256)
+
+[node name="moving_platform2" parent="." instance=ExtResource("10_tii1u")]
+position = Vector2(844, 356)
+move_horizontal = false
+
 [node name="Player" parent="." instance=ExtResource("3_wu64i")]
 position = Vector2(149, 461)
 
 [node name="BG" type="ParallaxBackground" parent="."]
 
 [node name="05" type="ParallaxLayer" parent="BG"]
-position = Vector2(0, 171)
-motion_mirroring = Vector2(432, 0)
+motion_mirroring = Vector2(432, 200)
 
 [node name="heaven" type="Sprite2D" parent="BG/05"]
 scale = Vector2(1.5, 1.5)
