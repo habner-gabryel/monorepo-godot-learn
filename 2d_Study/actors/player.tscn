@@ -82,14 +82,15 @@ position = Vector2(0, -8)
 shape = SubResource("RectangleShape2D_mvpqy")
 
 [node name="camera" type="Camera2D" parent="."]
-visible = false
 position = Vector2(-1, 0)
+offset = Vector2(0, -25)
 zoom = Vector2(2, 2)
 limit_left = -100
 limit_smoothed = true
 position_smoothing_enabled = true
 position_smoothing_speed = 6.0
 drag_horizontal_enabled = true
+drag_top_margin = 0.44
 editor_draw_limits = true
 editor_draw_drag_margin = true
 
